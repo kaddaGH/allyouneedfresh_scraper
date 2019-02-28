@@ -12,12 +12,12 @@ category = body.css(".breadcrumb-round li").last.text.strip
 
 brand = body.at("h1 a").text
 
-promotion_text = body.at(".card-sale-top").text rescue ""
+promotion_text = body.at(".card-sale-top").text.strip rescue ""
 
 
-description = body.css(".product-description.details-bottom").text.gsub(/Produktdetails[^<>]*\Z/, '').gsub(/[\s\n,]+/, ' ')
+description = body.css(".product-description.details-bottom").text.gsub(/Produktdetails[^{]*\Z/, '').gsub(/[\s\n,]+/, ' ')
 
-image_url = body.css(".image-zoom").attr("src")
+image_url = content[/(?<="image":")(.+?)(?=")/]
 
 price = content[/(?<="price":")(.+?)(?=")/]
 item_size = nil
