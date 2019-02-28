@@ -4,7 +4,7 @@ products = body.css(".article-link")
 scrape_url_nbr_products = products.length
 
 
-products.take(1).each_with_index do |product, i|
+products.each_with_index do |product, i|
   pages << {
       page_type: 'product_details',
       method: 'GET',

@@ -20,7 +20,7 @@ search_terms.each do |search_term|
       page_type: 'products_listing',
       method: 'GET',
       fetch_type:"fullbrowser",
-      url: "https://www.allyouneedfresh.de/suchen?term=redbull#{URI.encode(search_term)}",
+      url: "https://www.allyouneedfresh.de/suchen?term=#{URI.encode(search_term)}",
       vars: {
           'input_type' => 'search',
           'search_term' => search_term,
